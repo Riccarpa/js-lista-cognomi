@@ -8,21 +8,28 @@ Consegna:
 
 //surname catch
 
-var surname = prompt('Inserisci il tuo cognome', 'aaa');
+var surname = prompt('Inserisci il tuo cognome', 'aaa').toUpperCase();
+
 
 //array + user-surname
 
-var surnameList = ['bianchi', 'neri', 'rossi', 'verdi', 'gialli'];
+var surnameList = ['Bianchi', 'Neri', 'Rossi', 'Verdi', 'Gialli'];
+
+
 
 surnameList.push(surname);
 
-//stampa in ordine alfabetico
+surnameList.sort();
+
+
+
+//list numeration
 
 var stamp = document.getElementById('stamp');
 var finalList = '';
 for (i = 0; i < surnameList.length; i++) {
 
-    finalList += '<li>' + (i + 1) + ' ' + surnameList[i]
+    finalList += '<li>' + (i) + ' ' + surnameList[i]
     '</li>';
 
     console.log(surnameList[i]);
@@ -32,4 +39,4 @@ for (i = 0; i < surnameList.length; i++) {
 
 // stamp
 
-stamp.innerHTML = finalList;
+stamp.innerHTML = finalList + '<li>' + 'Il tuo numero è in posizione : ' + surnameList.indexOf(surname) + '</li>';
