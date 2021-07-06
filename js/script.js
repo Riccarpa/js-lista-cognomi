@@ -8,7 +8,16 @@ Consegna:
 
 //surname catch
 
-var surname = prompt('Inserisci il tuo cognome', 'aaa').toUpperCase();
+var surname = prompt('Inserisci il tuo cognome', 'aAa');
+surname = surname.charAt(0).toUpperCase();
+
+
+
+
+
+
+
+
 
 
 //array + user-surname
@@ -29,7 +38,7 @@ var stamp = document.getElementById('stamp');
 var finalList = '';
 for (i = 0; i < surnameList.length; i++) {
 
-    finalList += '<li>' + (i) + ' ' + surnameList[i]
+    finalList += '<li>' + (i + 1) + ' ' + surnameList[i]
     '</li>';
 
     console.log(surnameList[i]);
@@ -38,5 +47,5 @@ for (i = 0; i < surnameList.length; i++) {
 
 
 // stamp
-
-stamp.innerHTML = finalList + '<li>' + 'Il tuo numero è in posizione : ' + surnameList.indexOf(surname) + '</li>';
+var position = surnameList.indexOf(surname);
+stamp.innerHTML = finalList + '<li>' + 'Il tuo numero è in posizione : ' + (position + 1) + '</li>';
