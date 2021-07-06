@@ -10,13 +10,13 @@ Consegna:
 
 var startSurname = prompt('Inserisci il tuo cognome', 'aAa');
 
-firstLetter = startSurname.charAt(0).toLocaleUpperCase();
+firstLetter = startSurname.charAt(0).toUpperCase();
 remain = startSurname.slice(1).toLowerCase();
 
 surname = firstLetter + remain;
 
 
-//array + user-surname
+//array + user-surname + sort
 
 var surnameList = ['Bianchi', 'Neri', 'Rossi', 'Verdi', 'Gialli'];
 
@@ -37,8 +37,8 @@ for (i = 0; i < surnameList.length; i++) {
     console.log(i + 1);
 }
 
-
-// stamp
+// stamp + index of surname
 
 var position = surnameList.indexOf(surname);
+
 stamp.innerHTML = finalList + '<li>' + 'Il tuo numero è in posizione : ' + (position + 1) + '</li>';
