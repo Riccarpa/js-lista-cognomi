@@ -6,31 +6,23 @@ Consegna:
 4. scrivi anche la posizione "umana" (partendo da 1) della lista in cui il nuovo utente si trova
 */
 
-//surname catch
+//surname catch and capitalize
 
-var surname = prompt('Inserisci il tuo cognome', 'aAa');
-surname = surname.charAt(0).toUpperCase();
+var startSurname = prompt('Inserisci il tuo cognome', 'aAa');
 
+firstLetter = startSurname.charAt(0).toLocaleUpperCase();
+remain = startSurname.slice(1).toLowerCase();
 
-
-
-
-
-
-
+surname = firstLetter + remain;
 
 
 //array + user-surname
 
 var surnameList = ['Bianchi', 'Neri', 'Rossi', 'Verdi', 'Gialli'];
 
-
-
 surnameList.push(surname);
 
 surnameList.sort();
-
-
 
 //list numeration
 
@@ -47,5 +39,6 @@ for (i = 0; i < surnameList.length; i++) {
 
 
 // stamp
+
 var position = surnameList.indexOf(surname);
 stamp.innerHTML = finalList + '<li>' + 'Il tuo numero è in posizione : ' + (position + 1) + '</li>';
